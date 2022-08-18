@@ -1,0 +1,16 @@
+name: "{{ .instance_uuid }}"
+description: ""
+type: "direct"
+tasks:
+  "just_test":
+    name: "just_test"
+    action: "std.echo"
+    params:
+      - "workflow_id": "{{ .workflow_id }}"
+        "uuid": "{{ .instance_uuid }}"
+        "auth":
+          "tenantid": "{{ .tenantid }}"
+          "token": "{{ .token }}"
+        "retry": 1
+        "sleep": 0
+task-defaults: null
